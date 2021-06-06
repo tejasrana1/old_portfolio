@@ -698,4 +698,12 @@ p.light:hover{
   .skills{
     width: 80%;
   }
+  .skills.light{
+    width: 80%;
+  }
+  .hobbies{
+    width: 70%;
+    margin: 100px auto 100px auto;
+    text-align: left;
+  }
 }
