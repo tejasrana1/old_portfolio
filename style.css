@@ -687,7 +687,10 @@ p.light:hover{
   animation-play-state: paused;
 }
 
-
+.pj{
+  width: 600px;
+  margin: auto;
+}
 
 
 
