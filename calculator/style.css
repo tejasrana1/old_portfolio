@@ -1,0 +1,36 @@
+body{
+  text-align: center;
+  color:white;
+  background: black;
+  font-family: sans-serif;
+}
+h1{
+  z-index: 1;
+}
+.calculator{
+  display: inline-block;
+  border:5px solid white;
+  text-align: center;
+  margin: 0;
+  opacity: 1;
+}
+.screen{
+  font-family: 'Wallpoet', cursive;
+  margin: 10px;
+  text-align: right;
+  height: 60px;
+  border:2px solid white;
+  font-size: 1.5rem;
+  padding-top: 10px;
+}
+.btn-input{
+  font-size: 1.3rem;
+  height: 50px;
+  width: 50px;
+  color: teal;
+}
+
+.buttons{
+  opacity:0.7;
+}
+

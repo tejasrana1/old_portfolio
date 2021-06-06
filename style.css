@@ -1,0 +1,701 @@
+html { scroll-behavior: smooth; }
+body{
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  background: #000000;
+}
+.body{
+  margin: 10px;
+  border: 3px solid #0ff;
+  transition: 1s;
+}
+.body.active{
+  border: 3px solid #f21170;
+  background: #FCF8F7;
+}
+
+/********************************** NavBar *************************************/
+nav{
+  color: #e4fbff;
+  font-family: 'Montserrat Alternates', sans-serif;
+  transition: 1s;
+}
+#check{
+  visibility: hidden;
+}
+.checkbtn{
+  font-size: 2rem;
+  cursor: pointer;
+  position: fixed;
+  margin-top: 50px;
+  left: 100px;
+  transition: 0.2s;
+  color:#a6a6a6;
+}
+.checkbtn:hover{
+  color: #e4fbff;
+  transform: scale(1.1);
+}
+ul{
+  position: fixed;
+  left: 100px;
+  top: 100px;
+  line-height: 1.5;
+  visibility: hidden;
+  background: #a6a6a620;
+  backdrop-filter: blur(5px);
+}
+#check:checked ~ ul{
+  visibility: visible;
+  z-index: 1;
+
+}
+nav li{
+  list-style: none;
+  padding: 20px;
+  margin: auto;
+}
+nav li:hover{
+  background-color: #FCF8F705;
+}
+nav a{
+  color: inherit;
+  text-decoration: none;
+  font-size: 2rem;
+}
+/***************************** Light/Dark Button ******************************/
+.modeout{
+  display: inline-block;
+  list-style: none;
+  border: 1px solid #08192D;
+  border-radius: 240px;
+  width: 90px;
+  height: 40px;
+  background: #08192D;
+  position: relative;
+  transition:all 1s, visibility 0s;
+}
+.toggler{
+  background: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  transition:all 1s, visibility 0s;
+}
+
+.in{
+  position: absolute;
+}
+.pt{
+  background: lightblue;
+  height: 1px;
+  width: 1px;
+  border-radius: 100%;
+  transition:all 1s, visibility 0s;
+}
+.pt1{
+  top: 23px;
+  left: 3px;
+}
+.pt2{
+  top:11px;
+  left:5.5px;
+}
+.pt3{
+  top:3.5px;
+  left:18.5px;
+}
+.pt4{
+  top:11px;
+  right: 5.5px;
+}
+.pt5{
+  top: 23px;
+  right: 3px;
+}
+.main{
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: lightblue;
+  margin: 50% 50%;
+  transform: translate(-50%,-50%);
+  transition:all 1s, visibility 0s;
+}
+.sm{
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+  top:14px;
+  right: 8px;
+  background: #08192D;
+  transition:all 1s, visibility 0s;
+  z-index: 1;
+}
+.modeout.active{
+  display: inline-block;
+  list-style: none;
+  border: 1px solid #FDB813;
+  border-radius: 240px;
+  width: 90px;
+  height: 40px;
+  background: #FCF8F7;
+  position: relative;
+}
+.toggler.active{
+  left: 50px;
+}
+.pt.active{
+  background: #FDB813;
+  height: 3px;
+  width: 1px;
+  border-radius: 240px;
+}
+.pt1.active{
+  top: 22px;
+  left: 3px;
+  transform: rotate(90deg);
+}
+.pt2.active{
+  top:10px;
+  left:4.5px;
+  transform: rotate(135deg);
+}
+.pt3.active{
+  top:2.5px;
+  left:18.5px;
+}
+.pt4.active{
+  top:10px;
+  right: 4.5px;
+  transform: rotate(45deg);
+}
+.pt5.active{
+  top: 22px;
+  right: 3px;
+  transform: rotate(90deg);
+}
+.main.active{
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #FDB813;
+  margin: 50% 50%;
+  transform: translate(-50%,-50%);
+}
+.sm.active{
+  background: none;
+}
+/******************************** Landing Page ********************************/
+.head{
+  transition: 1s;
+}
+.anima{
+  position: absolute;
+  border:3px solid white;
+  width: 500px;
+  height: 500px;
+  left: -600px;
+  top:100px;
+  text-align: center;
+  transition: 1s;
+  box-shadow:
+    inset 0 0 50px #fff,      /* inner white */
+    inset 20px 0 80px #f0f,   /* inner left magenta short */
+    inset -20px 0 80px #0ff,  /* inner right cyan short */
+    inset 20px 0 300px #f0f,  /* inner left magenta broad */
+    inset -20px 0 300px #0ff, /* inner right cyan broad */
+    0 0 50px #fff,            /* outer white */
+    -10px 0 80px #f0f,        /* outer left magenta */
+    10px 0 80px #0ff;         /* outer right cyan */
+}
+.n1{
+  border:2px solid white;
+  width: 300px;
+  height: 300px;
+  border-radius: 100% 30%;
+  margin:50% 20%;
+  position: absolute;
+  transform: translate(0,-50%);
+  box-shadow: 0 0 40px #0ff;
+  animation: rot 2s linear infinite;
+  transition: 1s;
+}
+.n3{
+  border:2px solid white;
+  width: 300px;
+  height: 300px;
+  border-radius: 100% 30%;
+  margin:50% 20%;
+  position: absolute;
+  transform: translate(0,-50%) rotate(20deg);
+  box-shadow: 0 0 40px #0ff;
+  animation: rot2 2s linear infinite reverse;
+  transition: 1s;
+}
+.n2{
+  position: absolute;
+  border:2px solid white;
+  width: 300px;
+  height: 300px;
+  border-radius: 30% 100%;
+  margin: 50% 20%;
+  transform: translate(0,-50%);
+  box-shadow: 0 0 40px #0ff;
+  animation: rot 2s linear infinite reverse;
+  transition: 1s;
+}
+.n4{
+  position: absolute;
+  border:2px solid white;
+  width: 300px;
+  height: 300px;
+  border-radius: 30% 100%;
+  margin: 50% 20%;
+  transform: translate(0,-50%) rotate(20deg);
+  box-shadow: 0 0 40px #0ff;
+  animation: rot2 2s linear infinite ;
+  transition: 1s;
+}
+.anima:hover .n1 , .anima:hover .n2, .anima:hover .n3, .anima:hover .n4{
+  animation-play-state: paused;
+}
+
+@keyframes rot {
+  0%{
+    transform: translate(0,-50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(0,-50%) rotate(360deg);
+  }
+}
+@keyframes rot2 {
+  0%{
+    transform: translate(0,-50%) rotate(20deg);
+  }
+  100%{
+    transform: translate(0,-50%) rotate(380deg);
+  }
+}
+.headborder{
+  color: #e4fbff;
+  position: relative;
+  display: inline-block;
+  font-family: 'Montserrat Alternates', sans-serif;
+  right: -300px;
+}
+.i{
+}
+.i:hover{
+  color: #00ead3;
+}
+.a:hover{
+  color: #ff449f;
+}
+.m:hover{
+  color: coral;
+}
+.t:hover{
+  color: #f54291;
+}
+.e:hover{
+  color: #005792;
+}
+.j:hover{
+  color: red;
+}
+.s:hover{
+  color: #1eae98;
+}
+.h1{
+  margin-top: 10%;
+  margin-bottom: 0;
+  font-size: 7rem;
+  transition: 1s;
+}
+.h2{
+  margin-top: 10px;
+  font-size: 3rem;
+  margin-left: 140px;
+  transition: 1s;
+}
+.h2:hover{
+  color: #f21170;
+}
+
+
+/********************************** IntroSection *****************************/
+.tejas{
+
+  width: 300px;
+  height: 300px;
+  border: 4px solid #0ff;
+  transform: rotate(10deg);
+  border-radius: 100%;
+
+  transition: 1s;
+}
+.img{
+  width: 350px;
+  height: 320px;
+  margin-top: 50px;
+  position: relative;
+  bottom: 80px;
+  display: inline-block;
+}
+.tejas.light{
+  width: 300px;
+  height: 300px;
+  border: 4px solid #330033;
+  transform: rotate(10deg);
+  border-radius: 100%;
+}
+.sc{
+  color: #000000;
+  font-size: 7rem;
+  margin-bottom: 0;
+  text-shadow: -1px 0 #e4fbff, 0 1px #e4fbff, 1px 0 #e4fbff, 0 -1px #e4fbff;
+
+  display: inline-block;
+  font-family: 'Montserrat Alternates', sans-serif;
+  transition: 1s;
+  }
+  .sc:hover{
+  color: #e4fbff;
+  transition: 300ms;
+  }
+p{
+  font-size: 1.7rem;
+  line-height: 2;
+  color: #a6a6a6;
+  transition: 1s;
+}
+p:hover{
+  transition: 200ms;
+  text-shadow: 0 0 50px #0ff;
+}
+.hello{
+  margin: auto;
+  width: 40%;
+  padding-top: 20px;
+}
+.divider{
+  color: #e4fbff;
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 10px;
+  width: 10%;
+  transition: 0.5s;
+}
+.maindivider{
+  border-style: none;
+  border-top-style: solid;
+  border-width: 3px;
+  width: 100%;
+  color: #0ff;
+  transition: 1s;
+}
+.divider:hover{
+  width: 50%;
+}
+/******************************* Hobbies *************************************/
+h2 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #e4fbff;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 2.5rem;
+}
+h3 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #e4fbff;
+  font-size: 2.5rem;
+  display: inline-block;
+  transition: 1s;
+  padding: 10px;
+  box-shadow: 0 0 17px 3px #0ff,0 0 4px 2px #0ff;
+}
+.img1 {
+  width: 180px;
+  float: left;
+  margin: 5px auto 5px auto;
+  margin-right: 30px;
+}
+.img2 {
+  width: 180px;
+  float: right;
+  margin-left: 30px;
+  border-radius: 100%;
+}
+.hobbies {
+  width: 50%;
+  margin: 100px auto 100px auto;
+  text-align: left;
+}
+.coding{
+  margin-top: 80px;
+}
+/**************************** Skills *****************************/
+.skills{
+  margin: 100px auto 100px auto;
+  text-align: center;
+  width: 70%;
+  color: #e4fbff;
+}
+.skills.light{
+  margin: 100px auto 100px auto;
+  text-align: center;
+  width: 70%;
+  color: #000066;
+}
+table{
+  margin-top:50px;
+  margin-left: 15%;
+  font-size: 2rem;
+}
+td{
+  text-align: left;
+  transition: 300ms;
+}
+td:hover{
+  text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 60px #0ff;
+}
+.stars{
+  color: #FDB813;
+  margin-left: 3000px;
+  transition: 300ms;
+}
+.stars.light{
+  color: #f21170;
+  margin-left: 3000px;
+  transition: 300ms;
+}
+.stars.light:hover{
+  color: #F68B1F;
+  text-shadow: 0 0 20px #F68B1F, 0 0 30px #F68B1F, 0 0 40px #F68B1F, 0 0 50px #F68B1F, 0 0 60px #F68B1F, 0 0 70px #F68B1F, 0 0 80px #F68B1F;
+}
+.stars:hover{##F68B1F
+  color: #FDB813;
+  text-shadow: 0 0 20px #FDB813, 0 0 30px #FDB813, 0 0 40px #FDB813, 0 0 50px #FDB813, 0 0 60px #FDB813, 0 0 70px #FDB813, 0 0 80px #FDB813;
+}
+
+/******************************** Projects *****************************/
+.pr{
+}
+.prt{
+  text-decoration: none;
+  color: white;
+  transition: 1s;
+}
+.prt:hover{
+  transition: 300ms;
+  text-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff, 0 0 80px #0ff, 0 0 100px #0ff;
+}
+.prt.light{
+  color: #000066;
+}
+/********************************* Contact-Me ****************************/
+.contact{
+  margin: 100px auto 100px auto;
+  text-align: center;
+  width: 48%;
+}
+form{
+  text-align: left;
+}
+.contact label{
+  color: white;
+}
+.btn {
+  background: #11cdd4;
+  background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+  background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+  background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+  background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+  background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #30e3cb;
+  background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+  text-decoration: none;
+}
+/**************************** footer *****************************************/
+footer{
+  border: 3px solid #30e3cb;
+  background: #2E2E2E;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  padding-top: 30px;
+  margin-top: 80px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  transition: 1s;
+}
+footer.light{
+  border: 3px solid #f21170;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+.footer-link{
+  margin: 20px 50px;
+  color: #e4fbff;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+.footer-link:hover{
+  color: #0ff;
+}
+
+.footer-text, .footer-text.light{
+  margin: 15px 50px 0;
+  color: #0ff;
+  font-size: 1.2rem;
+}
+.footer-text:hover{
+  text-shadow: none;
+}
+/**************************** Light Mode **********************************/
+.h1.light{
+  color: #330033;
+}
+.h2.light{
+  color: #330033;
+  transition: 1s;
+}
+.h2.light:hover{
+  color: #f21170;
+}
+nav.light{
+  color: #000066;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+.checkbtn.light{
+  font-size: 2rem;
+  cursor: pointer;
+  position: fixed;
+  margin-top: 50px;
+  left: 100px;
+  transition: 0.2s;
+  color: #000066;
+}
+.checkbtn.light:hover{
+  color: #66bfbf;
+  transform: scale(1.1);
+}
+.sc.light{
+  color: #FCF8F7;
+  text-shadow: -3px 0 #66bfbf, 0 3px #66bfbf, 3px 0 #66bfbf, 0 -3px #66bfbf;
+}
+.sc.light:hover{
+  color:#66bfbf;
+}
+h3.light{
+  color: #000066;
+  box-shadow: 0 0 17px 3px #000066,0 0 4px 2px #000066;
+}
+p.light{
+  color: #000000;
+}
+p.light:hover{
+  text-shadow: 0 0 50px #000066;
+}
+.divider.light{
+  color: #f21170;
+}
+.maindivider.light{
+    color: #f21170;
+}
+.anima.light{
+  position: absolute;
+  border:3px solid #000066;
+  width: 500px;
+  height: 500px;
+  left: -600px;
+  top:100px;
+  text-align: center;
+  box-shadow:
+    inset 0 0 50px #fff,      /* inner white */
+    inset 20px 0 80px #2794F7,   /* inner left magenta short */
+    inset -20px 0 80px #56ED93,  /* inner right cyan short */
+    inset 20px 0 300px #2794F7,  /* inner left magenta broad */
+    inset -20px 0 300px #56ED93, /* inner right cyan broad */
+    0 0 50px #fff,            /* outer white */
+    -10px 0 80px #2794F7,        /* outer left magenta */
+    10px 0 80px #56ED93;
+}
+.n1.light{
+  border:2px solid #000066;
+  width: 300px;
+  height: 300px;
+  border-radius: 100% 30%;
+  margin:50% 20%;
+  position: absolute;
+  transform: translate(0,-50%);
+  box-shadow: 0 0 40px #000066;
+  animation: rot 2s linear infinite;
+}
+.n2.light{
+  position: absolute;
+  border:2px solid #000066;
+  width: 300px;
+  height: 300px;
+  border-radius: 30% 100%;
+  margin: 50% 20%;
+  transform: translate(0,-50%);
+  box-shadow: 0 0 40px #000066;
+  animation: rot 2s linear infinite reverse;
+}
+.n3.light{
+  border:2px solid #000066;
+  width: 300px;
+  height: 300px;
+  border-radius: 100% 30%;
+  margin:50% 20%;
+  position: absolute;
+  transform: translate(0,-50%);
+  box-shadow: 0 0 40px #000066;
+  animation: rot2 2s linear infinite reverse;
+}
+.n4.light{
+  position: absolute;
+  border:2px solid #000066;
+  width: 300px;
+  height: 300px;
+  border-radius: 30% 100%;
+  margin: 50% 20%;
+  transform: translate(0,-50%);
+  box-shadow: 0 0 40px #000066;
+  animation: rot2 2s linear infinite;
+}
+.anima.light:hover .n1.light , .anima.light:hover .n2.light{
+  animation-play-state: paused;
+}
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+  .head{
+    transform: scale(0.7);
+  }
+  .skills{
+    width: 80%;
+  }
+}
